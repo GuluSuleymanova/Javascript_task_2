@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Window task 8</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: end; 
+        justify-content: center;
+        overflow: hidden;
+        background: url('./img/bg.png') ;
+        /* background: url('./img/bg-forest.jpg') ; */
+        background-repeat: no-repeat;
+        background-position:100% 100%;
+         background-size: 100%;
+      }
+      img{
+        width: 300px;
+        height: 300px;
+        transition: transform 0.5s ease;
+        position: absolute;
+        cursor: move;
+
+      }
+    </style>
+  </head>
+  <body>
+    <img id="heyvan" src="img/rabbit.png">
+    <!-- <img id="heyvan" src="img/penguen.png"> -->
+
+    <script>
+      let heyvan = document.getElementById('heyvan');
+		
+      document.addEventListener('keyup', function(event) {
+        switch(event.code) {
+          // case 'ArrowLeft':
+          //   heyvan.setAttribute('src', 'img/penguen-left.png');
+          //   break;
+          // case 'ArrowRight':
+          //   heyvan.setAttribute('src', 'img/penguen-right.png');
+          //   break;
+          case 'Space':
+            // heyvan.setAttribute('src', 'img/penguen-top.png');
+            heyvan.setAttribute('src', 'img/rabbit-top.png');
+            heyvan.style.transform = 'translateY(-200px)';
+            break;
+        }
+        setTimeout(function() {
+              // heyvan.setAttribute('src', 'img/penguen.png');
+              heyvan.setAttribute('src', 'img/rabbit.png');
+              heyvan.style.transform = '';
+            }, 900);
+      });
+// serhe aldigim hisseler ayri sekillerdi silmek istemedim istesez ona da baxa bilersiz)
+
+      // drag drop sekil yerini deyismek ele bele yoxlamaq ucun etdim
+      let initialX, initialY, currentX, currentY;
+
+		heyvan.addEventListener('dragstart', function(e) {
+			e.dataTransfer.setData("text/plain", null);
+			initialX = e.clientX;
+			initialY = e.clientY;
+		});
+
+		heyvan.addEventListener('dragover', function(e) {
+			e.preventDefault();
+		});
+
+		heyvan.addEventListener('drop', function(e) {
+			e.preventDefault();
+			currentX = e.clientX - initialX;
+			currentY = e.clientY - initialY;
+			var newX = heyvan.offsetLeft + currentX;
+			var newY = heyvan.offsetTop + currentY;
+			var maxX = window.innerWidth - heyvan.offsetWidth;
+			var maxY = window.innerHeight - heyvan.offsetHeight;
+			if (newX < 0) newX = 0;
+			if (newY < 0) newY = 0;
+			if (newX > maxX) newX = maxX;
+			if (newY > maxY) newY = maxY;
+			heyvan.style.left = newX + "px";
+			heyvan.style.top = newY + "px";
+		});
+    
+
+
+    </script>
+  </body>
+</html>

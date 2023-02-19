@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Task 3</title>
+    <style>
+    body{
+    background-color: #030813;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    }
+
+    #task3_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    color: rgb(184, 18, 148);
+    font-size: 200px;
+    transition: 5s all ease;
+    }
+    </style>
+</head>
+<body>
+    
+    
+    <script>
+       // 3) Bir div yaradin onu sehifede centerleyin. Olculeri 200-200px
+//  kvadrat olsun 1 saniyeden bir boyuyerek 400px-400px sonra yeniden oz olculerine qayitsin
+// Transitonla etmeyiniz gozlenilendir.
+
+    let div = document.createElement('div');
+    div.innerHTML='❤'
+    div.id='task3_div'
+    document.body.appendChild(div);
+
+    let size = 200;
+    setInterval(() => {
+    size = size === 200 ? 400 : 200;
+    div.style.fontSize = size + 'px';
+    //   div.style.height = size + 'px';
+    }, 1000); 
+    </script>
+</body>
+</html>

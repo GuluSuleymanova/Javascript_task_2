@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgb(4, 10, 4);
+}
+
+section{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+
+#task4_div{
+display: flex;  
+align-items: center;  
+justify-content: center;
+background-color: orangered;
+width: 200px;
+height: 200px;
+transform: rotate(0deg);
+font-size: 20px;
+font-weight: 700;
+
+}
+
+#btn-div{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+    color: black;
+}
+#start{
+    background-color: green;
+}
+#stop{
+    background-color: red;
+}
+}
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Task 9</title>
+
+    <style>
+
+    body{
+    background-color: rgb(151, 151, 225);
+    display: flex;
+     flex-wrap: wrap;
+
+     }
+
+        div{
+            width: 100px;
+            height: 100px;
+            display: flex;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <script>
+        // 9) Random reng generate eden functionu internetden tapib ekrana her clickde body-e yeni generate edilmish ve yeni reng-le renglenmish 100px - kvadrat box elave edin. 
+
+        function randomcolor() {
+            let color = Math.floor(Math.random()*16777215).toString(16);
+            return '#'+color;
+        }
+
+
+        document.addEventListener('click', ()=>{
+            let box = document.createElement('div');
+            box.style.backgroundColor =randomcolor();
+            document.body.appendChild(box);
+        })
+    </script>
+</body>
+</html>

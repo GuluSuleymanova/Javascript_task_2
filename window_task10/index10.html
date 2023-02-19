@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Task 10</title>
+
+    <style>
+
+    body{
+    background-color: rgb(57, 87, 67);
+    }
+   #box {
+    margin: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(238, 244, 43);
+    }
+    </style>
+
+</head>
+<body>
+    
+    <input type="number" id="input" min="0">
+     <div id="box"></div>
+
+    
+    <script>
+
+// 10) Input (Type number) ve box (div 10px kvadrat) elave edin. Inputun icerisine reqem yazdiginiz qeder olculer boyusun ve ya kicilsin.
+// Meselen 10px dir inputa 100yazdim olcusu 110px kvadrat olsun 
+
+    let inputNumber = document.getElementById('input');
+    let box = document.getElementById('box');
+
+    inputNumber.addEventListener('input', function() {
+    let newsize =  parseInt(inputNumber.value);
+    box.style.width  = `${newsize+10}px`;
+    box.style.height = `${newsize+10}px`;
+
+  });
+</script>
+</body>
+</html>

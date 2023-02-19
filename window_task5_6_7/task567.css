@@ -1,0 +1,10 @@
+body {
+  background-color: #333;
+}
+
+#task5_div {
+  width: 60px;
+  height: 60px;
+  background-color: blue;
+  transition: 5s all ease;
+}/*# sourceMappingURL=task567.css.map */

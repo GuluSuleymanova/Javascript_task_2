@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Task 1</title>
+
+    <style>
+        body{
+        background-color: #072125;
+    }
+
+    #task1_div{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: #c460c4;
+        position: absolute;
+        left: 0px;
+    }
+    </style>
+</head>
+<body>
+
+    
+    <script>
+        //1) Bir div yaradin pencerenin solunda normal yerinde dayansin. 2 saniyeden bir 20px sola hereket etsin ve 20 saniyeden sonra dayansin.
+
+        let div =document.createElement('div');
+        div.id='task1_div';
+        document.body.appendChild(div);
+
+        let move_div = setInterval(() => {
+            let left = parseInt(div.style.left) || 0; 
+            div.style.left = `${left + 20}px`; 
+        }, 2000);
+        
+        let stop_div=setTimeout(() => {
+            clearInterval(move_div);
+            div.style.left='0px';
+        }, 20000);
+    </script>
+</body>
+</html>
